@@ -135,7 +135,7 @@
       background: var(--panel-grad);
       border: 1px solid var(--border-strong);
       border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: .75rem;
-      display: grid; grid-template-columns: 1fr auto; gap: 14px;
+      display: grid; grid-template-columns: 52px 1fr auto; gap: 14px;
       box-shadow: var(--shadow);
       transition: border-color .15s, box-shadow .15s;
     }
@@ -143,6 +143,8 @@
       border-color: var(--accent);
       box-shadow: var(--shadow), 0 0 12px rgba(200,168,64,.12);
     }
+    .monster-img { align-self: center; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; }
+    .monster-img img { max-width: 52px; max-height: 52px; width: auto; height: auto; object-fit: contain; }
     .enemy-name { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 600; margin-bottom: 2px; letter-spacing: .02em; }
     .enemy-name a { color: var(--accent-text); text-decoration: none; }
     .enemy-name a:hover { color: var(--text); }
@@ -464,7 +466,11 @@
 
         var tagHtml = tags.map(function(t) { return '<span class="tag ' + t.cls + '">' + t.text + '</span>'; }).join('');
 
+        var imgSlug = page.replace(/_\([^)]+\)/g, '').replace(/_$/, '');
+        var imgUrl  = 'https://runescape.wiki/images/' + imgSlug + '.png';
+
         return '<div class="enemy-card">' +
+          '<div class="monster-img"><img src="' + imgUrl + '" alt="" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></div>' +
           '<div>' +
             '<div class="enemy-name"><a href="' + wikiUrl + '" target="_blank" rel="noopener">' + name + ' <i class="ti ti-external-link" style="font-size:11px;opacity:.45" aria-hidden="true"></i></a></div>' +
             '<div class="enemy-meta"><i class="ti ti-map-pin" style="font-size:12px;vertical-align:-1px" aria-hidden="true"></i> <a href="https://runescape.wiki/w/' + encodeURIComponent(loc.replace(/ /g, '_')) + '" target="_blank" rel="noopener" class="loc-link">' + loc + '</a></div>' +
