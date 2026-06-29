@@ -147,6 +147,8 @@
     .enemy-name a { color: var(--accent-text); text-decoration: none; }
     .enemy-name a:hover { color: var(--text); }
     .enemy-meta { font-size: 12px; color: var(--text-secondary); margin-top: 3px; }
+    .loc-link { color: var(--text-secondary); text-decoration: none; border-bottom: 1px dotted var(--text-muted); }
+    .loc-link:hover { color: var(--accent-text); border-bottom-color: var(--accent); }
     .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
     .tag { font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: .03em; }
     .tag-green  { background: var(--green-bg); color: var(--green-text); border: 1px solid rgba(92,184,112,.18); }
@@ -465,7 +467,7 @@
         return '<div class="enemy-card">' +
           '<div>' +
             '<div class="enemy-name"><a href="' + wikiUrl + '" target="_blank" rel="noopener">' + name + ' <i class="ti ti-external-link" style="font-size:11px;opacity:.45" aria-hidden="true"></i></a></div>' +
-            '<div class="enemy-meta"><i class="ti ti-map-pin" style="font-size:12px;vertical-align:-1px" aria-hidden="true"></i> ' + loc + '</div>' +
+            '<div class="enemy-meta"><i class="ti ti-map-pin" style="font-size:12px;vertical-align:-1px" aria-hidden="true"></i> <a href="https://runescape.wiki/w/' + encodeURIComponent(loc.replace(/ /g, '_')) + '" target="_blank" rel="noopener" class="loc-link">' + loc + '</a></div>' +
             '<div class="tags">' + tagHtml + '</div>' +
           '</div>' +
           '<div class="stat-col">' +
