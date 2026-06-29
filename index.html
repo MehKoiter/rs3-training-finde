@@ -382,10 +382,10 @@
     {name:'Guard',                  page:'Guard',                        combat:22,  weakness:'Slash',        slaylvl:'',   location:'Falador',                 members:'no',  aggressive:'no',  poisonous:'no',  lifepoints:600,   experience:240},
     {name:'Warrior woman',          page:'Warrior_woman',                combat:22,  weakness:'Slash',        slaylvl:'',   location:'Varrock',                 members:'no',  aggressive:'no',  poisonous:'no',  lifepoints:600,   experience:240},
     {name:'Hobgoblin',              page:'Hobgoblin',                    combat:28,  weakness:'Slash',        slaylvl:'',   location:'Edgeville Dungeon',       members:'no',  aggressive:'no',  poisonous:'no',  lifepoints:700,   experience:280},
-    {name:'Hill Giant',             page:'Hill_Giant',                   combat:28,  weakness:'Crush',        slaylvl:'',   location:'Edgeville Dungeon',       members:'no',  aggressive:'yes', poisonous:'no',  lifepoints:1100,  experience:440},
+    {name:'Hill Giant',             page:'Hill_Giant',  img:'Hill_giant',    combat:28,  weakness:'Crush',        slaylvl:'',   location:'Edgeville Dungeon',       members:'no',  aggressive:'yes', poisonous:'no',  lifepoints:1100,  experience:440},
     {name:'Deadly red spider',      page:'Deadly_red_spider',            combat:34,  weakness:'Slash',        slaylvl:'',   location:'Edgeville Dungeon',       members:'no',  aggressive:'yes', poisonous:'no',  lifepoints:650,   experience:260},
     {name:'Flesh Crawler',          page:'Flesh_Crawler',                combat:35,  weakness:'Slash',        slaylvl:'',   location:'Stronghold of Security',  members:'no',  aggressive:'yes', poisonous:'no',  lifepoints:950,   experience:380},
-    {name:'Moss Giant',             page:'Moss_Giant',                   combat:42,  weakness:'Slash',        slaylvl:'',   location:'Varrock Sewers',          members:'no',  aggressive:'yes', poisonous:'no',  lifepoints:1900,  experience:760},
+    {name:'Moss Giant',             page:'Moss_Giant',  img:'Moss_giant',    combat:42,  weakness:'Slash',        slaylvl:'',   location:'Varrock Sewers',          members:'no',  aggressive:'yes', poisonous:'no',  lifepoints:1900,  experience:760},
     {name:'Ice Giant',              page:'Ice_Giant',                    combat:53,  weakness:'Fire spells',  slaylvl:'',   location:'White Wolf Mountain',     members:'no',  aggressive:'yes', poisonous:'no',  lifepoints:2200,  experience:880},
     {name:'Ice Warrior',            page:'Ice_Warrior',                  combat:57,  weakness:'Fire spells',  slaylvl:'',   location:'White Wolf Mountain',     members:'no',  aggressive:'yes', poisonous:'no',  lifepoints:2500,  experience:1000},
     {name:'Lesser Demon',           page:'Lesser_Demon',                 combat:82,  weakness:'Water spells', slaylvl:'',   location:'Karamja Volcano',         members:'no',  aggressive:'yes', poisonous:'no',  lifepoints:3200,  experience:1280},
@@ -533,7 +533,7 @@
 
         var tagHtml = tags.map(function(t) { return '<span class="tag ' + t.cls + '">' + t.text + '</span>'; }).join('');
 
-        var imgSlug = page.replace(/_\([^)]+\)/g, '').replace(/_$/, '');
+        var imgSlug = m.img || page.replace(/_\([^)]+\)/g, '').replace(/_$/, '');
         var imgUrl  = 'https://runescape.wiki/images/' + imgSlug + '.png';
 
         return '<div class="enemy-card">' +
