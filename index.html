@@ -687,7 +687,8 @@
 
   ['combat','atk','str','def','hp','pray','ranged','magic','minlvl','maxlvl','slayer'].forEach(function(id) {
     var el = document.getElementById(id);
-    el.addEventListener('input', function() {
+    el.addEventListener('input', saveState);
+    el.addEventListener('blur', function() {
       var min = parseFloat(el.min), max = parseFloat(el.max), val = parseFloat(el.value);
       if (!isNaN(max) && val > max) el.value = max;
       if (!isNaN(min) && val < min) el.value = min;
